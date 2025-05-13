@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/your-username/nodejs-pipeline-app.git'
+                git 'https://github.com/vijayjerry/nodejs.git'
             }
         }
 
@@ -23,13 +23,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t nodejs-pipeline-app .'
+                sh 'docker build -t nodejs-image .'
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                sh 'docker run -d -p 3000:3000 nodejs-pipeline-app'
+                sh 'docker run -d -p 3000:3000 nodejs-image'
             }
         }
     }
